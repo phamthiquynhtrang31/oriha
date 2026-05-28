@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>織葉 - おりは | 紡ぐ、織る、まとう。</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 日本語を美しく魅せるGoogle Fonts（明朝体：Noto Serif JP） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;600&family=Plus+Jakarta+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAV SECTION -->
+    <header class="navbar">
+        <div class="logo">織葉</div>
+        <nav class="nav-links">
+            <a href="#story">物語</a>
+            <a href="#gallery">作品</a>
+            <a href="#reserve" class="btn-nav">アトリエ予約</a>
+        </nav>
+    </header>
+
+    <!-- ① HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="brand-sub">京都・手仕事の衣服</span>
+            <h1>紡ぐ、織る、まとう。</h1>
+            <p>自然光が心地よく差し込むアトリエで、<br>あなたの毎日に寄り添う一枚をお仕立てします。</p>
+            <a href="#gallery" class="btn-primary">作品を見る</a>
+        </div>
+    </section>
+
+    <!-- ② STORY SECTION -->
+    <section id="story" class="story section-fade">
+        <div class="container story-inner">
+            <div class="story-text">
+                <span class="section-subtitle">Our Story</span>
+                <h2>時をかける服づくり</h2>
+                <p>「織葉（おりは）」の服は、効率やスピードとは無縁の場所で生まれます。職人が糸を選び、手で紡ぎ、草木の命を借りて染め上げる。</p>
+                <p>そうして出来上がったリネンやシルクの布地には、独特の凸凹や、光の加減で変わる豊かな表情があります。纏（まと）うたびに心がふっと静かになるような、丁寧な衣服をお届けします。</p>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=600" alt="手仕事の布地">
+            </div>
+        </div>
+    </section>
+
+    <!-- ③ PRODUCTS GALLERY SECTION -->
+    <section id="gallery" class="gallery section-fade">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Collection</span>
+                <h2>大自然の美を纏う作品</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <!-- 作品 1 -->
+                <div class="gallery-item">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=400" alt="天然シルクの贅沢ワンピース">
+                    </div>
+                    <h3>天然シルクの贅沢ワンピース</h3>
+                    <p>とろけるような肌触りと、美しいドレープが特徴の特別な一着。</p>
+                </div>
+                <!-- 作品 2 -->
+                <div class="gallery-item">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ce?q=80&w=400" alt="手刺繍のリネンブラウス">
+                    </div>
+                    <h3>手刺繍のリネンブラウス</h3>
+                    <p>上質なフランスリネンに、京都の職人が一針ずつ刺繍を施しました。</p>
+                </div>
+                <!-- 作品 3 -->
+                <div class="gallery-item">
+                    <div class="img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1590736969955-71cc94801759?q=80&w=400" alt="本藍染めの手織りストール">
+                    </div>
+                    <h3>本藍染めの手織りストール</h3>
+                    <p>洗うほどに美しい青が冴え渡る、天然藍100%のグラデーション。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ④ RESERVATION FORM SECTION -->
+    <section id="reserve" class="reserve section-fade">
+        <div class="reserve-container">
+            <span class="section-subtitle">Reservation</span>
+            <h2>アトリエへのご招待</h2>
+            <p class="reserve-desc">当店は1日3組限定の完全予約制アトリエです。お一人おひとりの体型や好みに合わせ、お茶を飲みながらゆっくりと衣服をご提案いたします。</p>
+            
+            <form class="reserve-form">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" placeholder="例：山田 さくら" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" placeholder="example@oriha.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">ご希望の時間帯</label>
+                    <select id="time" required>
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="11:00">11:00 〜 (午前の部)</option>
+                        <option value="14:00">14:00 〜 (午後の部)</option>
+                        <option value="17:00">17:00 〜 (夕方の部)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">この内容でアトリエを予約する</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 織葉 -oriha- Kyoto. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
