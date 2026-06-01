@@ -475,7 +475,7 @@ section {
 .about-stat {
     margin-top: 2.5rem;
     display: flex;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .stat-item {
@@ -644,7 +644,7 @@ section {
     background: rgba(154, 123, 79, 0.04);
 }
 
-.reservation-availability {
+/* .reservation-availability {
     display: flex;
     gap: 0.8rem;
     margin-bottom: 3rem;
@@ -662,6 +662,14 @@ section {
     border-color: rgba(44, 62, 43, 0.2);
     color: var(--text-light);
     text-decoration: line-through;
+} */
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    opacity: 0.5;
+}
+
+.form-field::-webkit-input-placeholder {
+    opacity: 1;
 }
 
 .form-grid {
@@ -677,6 +685,56 @@ section {
     gap: 0.5rem;
 }
 
+
+.time-slots-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 0.8rem 0;
+
+}
+
+.time-slot-btn {
+    display: flex;
+    align-items: center;
+}
+
+.time-slot-btn input[type="radio"] {
+    cursor: pointer;
+    /* border-radius: 50%; */
+    transform: scale(0.7);
+}
+
+.form-field input[type="radio"]:focus {
+    background-color: var(--green-deep);
+}
+
+input[type="radio"]:checked {
+    background-color: #233926;
+    box-shadow: inset 0 0 0 8px var(--cream-warm)
+}
+
+.time-slot-btn span {
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.time-slot-btn:hover span {
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 0.85rem;
+
+}
+
+.time-slot-btn input[type="radio"]:checked+span {
+    color: var(--text-dark);
+    font-weight: bold;
+    font-size: 0.9rem;
+
+}
+
+
 .form-field.full-width {
     grid-column: 1 / -1;
 }
@@ -689,7 +747,7 @@ section {
 }
 
 .form-field input,
-.form-field select,
+/* .form-field select, */
 .form-field textarea {
     font-family: 'Noto Serif JP', serif;
     font-size: 0.9rem;
@@ -704,25 +762,72 @@ section {
     -webkit-appearance: none;
 }
 
-.form-field select {
+/* .form-field select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M0 0l6 7 6-7z' fill='%232C3E2B' opacity='0.5'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 1rem center;
     padding-right: 2.5rem;
     cursor: pointer;
-}
+} */
 
 .form-field input:focus,
-.form-field select:focus,
+/* .form-field select:focus, */
 .form-field textarea:focus {
     border-color: var(--green-deep);
-    background: #fff;
+    background: var(--cream);
 }
 
 .form-field textarea {
     min-height: 100px;
     resize: vertical;
     line-height: 1.8;
+}
+
+/* 1. Trạng thái khi ô chọn giờ bị ĐẦY (Có class .is-full) */
+.time-slot-btn.is-full input {
+    cursor: not-allowed;
+}
+
+.time-slot-btn.is-full span {
+    opacity: 0.3;
+    /* Làm mờ hẳn cụm nút giờ */
+    color: #a39e93;
+    /* Đổi chữ sang màu xám nhạt */
+    border-color: rgba(181, 176, 163, 0.3);
+    /* Làm mờ đường viền vuông/tròn */
+    cursor: not-allowed;
+    /* Đổi con trỏ chuột thành hình biển cấm */
+    position: relative;
+    /* Làm gốc tọa độ để vẽ đường gạch chéo */
+    overflow: hidden;
+    /* Cắt gọn các góc thừa của đường gạch chéo */
+}
+
+/* 2. Vẽ đường gạch chéo tinh tế xuyên qua ô để báo Hết chỗ */
+.time-slot-btn.is-full span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    /* Độ mảnh của đường gạch */
+    background-color: #b5b0a3;
+    /* Màu đường gạch trùng màu viền */
+
+    /* Xoay nghiêng đường thẳng để tạo thành vệt gạch chéo sắc nét */
+    transform: rotate(-15deg);
+    transform-origin: center;
+}
+
+/* 3. Vô hiệu hóa hiệu ứng Hover chuột khi ca giờ đã đầy */
+.time-slot-btn.is-full:hover span {
+    /* background-color: #f1ede6; */
+    /* Giữ nguyên màu nền kem ban đầu */
+    /* border-color: rgba(181, 176, 163, 0.3); */
+    color: #a39e93;
+    font-weight: normal;
+    font-size: 0.8rem;
 }
 
 .form-footer {
@@ -844,6 +949,11 @@ footer {
         display: none;
     }
 
+    .about-stat {
+        gap: 3rem;
+    }
+
+
     .collection-header {
         flex-direction: column;
         align-items: flex-start;
@@ -909,6 +1019,14 @@ footer {
 
     .hero-title {
         font-size: 3rem;
+    }
+
+    .about-stat {
+        gap: 2.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
     }
 
     .form-footer {

@@ -11,6 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Plus+Jakarta+Sans:wght@300;400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- Theme màu tối nếu cần, hoặc tự custom bằng CSS -->
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
 
 </head>
 
@@ -161,37 +164,59 @@
                 織葉のアトリエは、完全予約制・1日3組限定でご案内しております。<br>
                 ゆっくりとした時間の中で、素材の手触り、色の深みをお確かめください。
             </div>
-            <div class="reservation-availability fade-up delay-2">
+            <!-- <div class="reservation-availability fade-up delay-2">
                 <span class="avail-chip">午前 10:00〜</span>
                 <span class="avail-chip">午後 13:00〜</span>
                 <span class="avail-chip full">午後 16:00〜（満席）</span>
-            </div>
+            </div> -->
             <form id="reservationForm" class="fade-up delay-2" onsubmit="handleSubmit(event)">
                 <div class="form-grid">
                     <div class="form-field">
                         <label for="name">お名前</label>
-                        <input type="text" id="name" placeholder="山田 さくら" required>
+                        <input type="text" id="name" placeholder="山田 さくら (Yamada Sakura)" required>
                     </div>
                     <div class="form-field">
                         <label for="email">メールアドレス</label>
                         <input type="email" id="email" placeholder="sakura@example.com" required>
                     </div>
                     <div class="form-field">
-                        <label for="time">ご希望の時間帯</label>
+                        <!-- <label for="time">ご希望の時間帯</label>
                         <select id="time" required>
                             <option value="" disabled selected>時間帯をお選びください</option>
                             <option value="10:00">午前 10:00〜（残席あり）</option>
                             <option value="13:00">午後 13:00〜（残席あり）</option>
-                        </select>
+                        </select> -->
+
+                        <label for="datepicker">ご来店希望日</label>
+                        <input type="text" id="datepicker" placeholder="日付を選択してください" required>
                     </div>
-                    <div class="form-field">
+                    <div class="form-field time-section">
+                        <label>ご来店希望時間</label>
+                        <div class="time-slots-container">
+                            <label class="time-slot-btn">
+                                <input type="radio" name="reservation_time" value="10:00" required>
+                                <span>10:00〜</span>
+                            </label>
+
+                            <label class="time-slot-btn">
+                                <input type="radio" name="reservation_time" value="13:30">
+                                <span>13:30〜</span>
+                            </label>
+
+                            <label class="time-slot-btn">
+                                <input type="radio" name="reservation_time" value="16:00">
+                                <span>16:00〜</span>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <div class="form-field">
                         <label for="guests">人数</label>
                         <select id="guests">
                             <option value="1">お一人様</option>
                             <option value="2">2名様</option>
                             <option value="3">3名様</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-field full-width">
                         <label for="message">ご要望・ご質問（任意）</label>
                         <textarea id="message" placeholder="気になる作品や、当日のご希望などをお聞かせください。"></textarea>
@@ -222,7 +247,8 @@
     <div class="toast" id="toast">
         ご予約を承りました。確認メールをお送りします。
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
     <script src="script.js"></script>
 </body>
 
