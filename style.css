@@ -177,6 +177,11 @@ nav a {
     overflow: hidden;
 }
 
+.hero-image-side img {
+    max-width: 850px;
+}
+
+
 .hero-image-placeholder {
     position: absolute;
     inset: 0;
@@ -213,7 +218,8 @@ nav a {
 
 .hero-decorative-text {
     position: absolute;
-    bottom: 3rem;
+    top: 1.5rem;
+    bottom: 1.5rem;
     left: 2rem;
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -1016,6 +1022,11 @@ footer {
     #hero {
         padding-top: 4rem;
     }
+
+    .hero-image-side img {
+        max-width: 700px;
+    }
+
 
     .hero-title {
         font-size: 3rem;
