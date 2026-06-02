@@ -909,7 +909,7 @@ footer {
 }
 
 .toast.show {
-    transform: translateX(-50%) translateY(-200);
+    transform: translateX(-50%) translateY(-200px);
 }
 
 /* ── RESPONSIVE ── */
