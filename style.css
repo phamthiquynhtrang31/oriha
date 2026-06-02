@@ -893,7 +893,7 @@ footer {
 } */
 
 /* ── TOAST ── */
-.toast {
+/* .toast {
     position: fixed;
     bottom: 2rem;
     left: 50%;
@@ -909,8 +909,8 @@ footer {
 }
 
 .toast.show {
-    transform: translateX(-50%) translateY(-200px);
-}
+    transform: translateX(-50%) translateY(-200);
+} */
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
@@ -1040,4 +1040,75 @@ footer {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Khung chứa toàn màn hình trang cảm ơn */
+.thanks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Căn giữa theo chiều rộng */
+    align-items: center;
+    /* Căn giữa theo chiều cao */
+    min-height: 100vh;
+    /* Chiếm trọn vẹn chiều cao màn hình */
+    background-color: var(--cream);
+    /* Sử dụng biến màu kem của bạn */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.thanks-content {
+    text-align: center;
+    /* Căn chữ ra chính giữa theo chiều rộng */
+    max-width: 500px;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.thanks-icon {
+    font-size: 3rem;
+    color: var(--green-deep);
+    /* Màu xanh rêu của bạn */
+    margin-bottom: 1.5rem;
+}
+
+.thanks-content h2 {
+    font-size: 1.8rem;
+    color: var(--green-deep);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+}
+
+.thanks-text {
+    font-size: 0.95rem;
+    line-height: 2;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+.thanks-subtext {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    color: #777777;
+    margin-bottom: 2.5rem;
+}
+
+/* 🚀 Thiết kế chiếc nút quay về trang chủ thanh lịch */
+.back-home-btn {
+    display: inline-block;
+    background: var(--green-deep);
+    color: var(--cream);
+    padding: 1rem 2.5rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    /* Xóa đường gạch chân mặc định của thẻ thẻ a */
+    letter-spacing: 0.1em;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    border: 1px solid var(--green-deep);
+}
+
+/* Hiệu ứng mượt mà khi di chuột qua nút */
+.back-home-btn:hover {
+    background: transparent;
+    color: var(--green-deep);
 }
